@@ -1,0 +1,385 @@
+﻿@using WebsiteGS_Shop.Models
+@model List<KhachHang>
+@{ 
+    KhachHang seskh = (KhachHang)Session["tk"];
+}
+<!-- header-bot-->
+<div class="header-bot">
+    <div class="header-bot_inner_wthreeinfo_header_mid">
+        <!-- header-bot-->
+        <div class="col-md-4 logo_agile">
+            <h1>
+                <a href="/Home/Index">
+                    <span>G</span><span>S</span> Shop
+                    <img src="~/Content/Layout/images/logo2.png" alt=" ">
+                </a>
+            </h1>
+        </div>
+        <!-- header-bot -->
+        <div class="col-md-8 header">
+            <!-- header lists -->
+            @if (seskh != null)
+            {
+            <ul class="text-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Chào, @seskh.TenKH<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li style="width: 100%; text-align: unset"><a href="/user/preferences"><i class="fa fa-smile-o"></i> Quản lý tài khoản</a></li>
+                        <li style="width: 100%; text-align: unset"><a href="/help/support"><i class="fa fa-archive"></i> Đơn hàng của tôi</a></li>
+                        <li style="width: 100%; text-align: unset"><a href="/auth/logout"><i class="fa fa-heart"></i> Danh sách yêu thích</a></li>
+                        <li style="width: 100%; text-align: unset"><a href="/auth/logout"><i class="fa fa-bell"></i> Đơn hàng đã theo dõi</a></li>
+                        <li style="width: 100%; text-align: unset"><a href="/auth/logout"><i class="fa fa-star"></i> Nhận xét của tôi</a></li>
+                        <li style="width: 100%; text-align: unset"><a href="/auth/logout"><i class="fa fa-times-circle"></i> Quản lý đơn hàng và đổi trả</a></li>
+                        <li style="width: 100%; text-align: unset"><a href="/DangNhap/DangXuat"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
+                    </ul>
+                </li>
+                <li style="border-right: none;">
+                    <a href="/DangNhap/DangXuat">
+                        <span class="fa fa-sign-out" aria-hidden="true"></span>
+                    </a>
+                </li>
+            </ul>
+            }
+            else
+            {
+                <ul class="text-right">
+                    <li>
+                        <span class="fa fa-phone" aria-hidden="true"></span> 0869 139 879
+                    </li>
+                    <li>
+                        <a href="/DangNhap/DangNhap">
+                            <span class="fa fa-unlock-alt" aria-hidden="true"></span> Đăng Nhập
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="modal" data-target="#myModal2">
+                            <span class="fa fa-pencil-square-o" aria-hidden="true"></span> Đăng Ký
+                        </a>
+                    </li>
+                    <li style=" border-right: none">
+                        <a href="/DangNhap/DangNhapNB">
+                            <span class="fa fa-shopping-bag" aria-hidden="true"></span> Kênh Người Bán
+                        </a>
+                    </li>
+                </ul>
+            }
+            <!-- //header lists -->
+            <!-- search -->
+            <div class="agileits_search">
+                <form action="#" method="post">
+                    <input name="Search" type="search" placeholder="Tìm kiếm trên GS Shop" required="">
+                    <button type="submit" class="btn btn-default" aria-label="Left Align">
+                        <span class="fa fa-search" aria-hidden="true"> </span>
+                    </button>
+                </form>
+            </div>
+            <!-- //search -->
+            <!-- cart details -->
+            <div class="top_nav_right">
+                <div class="wthreecartaits wthreecartaits2 cart cart box_1">
+                    <form action="#" method="post" class="last">
+                        <input type="hidden" name="cmd" value="_cart">
+                        <input type="hidden" name="display" value="1">
+                        <button class="w3view-cart" type="submit" name="submit" value="">
+                            <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <!-- //cart details -->
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- signin Model -->
+<!-- //signin Model -->
+<!-- signup Model -->
+<!-- Modal2 -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body modal-body-sub_agile">
+                <div class="main-mailposi">
+                    <span class="fa fa-envelope-o" aria-hidden="true"></span>
+                </div>
+                <div class="modal_body_left modal_body_left1">
+                    <h3 class="agileinfo_sign">Sign Up</h3>
+                    <p>
+                        Come join the Grocery Shoppy! Let's set up your Account.
+                    </p>
+                    <form action="#" method="post">
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" placeholder="Name" name="Name" required="">
+                        </div>
+                        <div class="styled-input">
+                            <input type="email" placeholder="E-mail" name="Email" required="">
+                        </div>
+                        <div class="styled-input">
+                            <input type="password" placeholder="Password" name="password" id="password1" required="">
+                        </div>
+                        <div class="styled-input">
+                            <input type="password" placeholder="Confirm Password" name="Confirm Password" id="password2" required="">
+                        </div>
+                        <input type="submit" value="Sign Up">
+                    </form>
+                    <p>
+                        <a href="#">By clicking register, I agree to your terms</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- //Modal content-->
+    </div>
+</div>
+<!-- //Modal2 -->
+<!-- //signup Model -->
+<!-- //header-bot -->
+<!-- navigation -->
+<div class="ban-top">
+    <div class="container">
+        <div class="agileits-navi_search">
+            <form action="#" method="post">
+                <div id="agileinfo-nav_search" name="agileinfo_search" required="" class="dropdown">
+                    <a id="dLabel" data-toggle="dropdown" data-target="#" href="/page.html" style="text-decoration: none">
+                        <center>Danh Mục Sản Phẩm<span class="caret"></span></center>
+                    </a>
+                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Thiết Bị Điện Tử</a>
+                            <ul class="dropdown-menu">
+                                <li><a tabindex="-1" href="#">Điện thoại di động</a></li>
+                                <li><a tabindex="-1" href="#">Máy tính bảng</a></li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Laptop</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Laptop cơ bản</a></li>
+                                        <li><a href="#">Laptop chơi game</a></li>
+                                        <li><a href="#">Dòng 2 trong 1</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Máy tính để bàn</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Máy tính nguyên bộ</a></li>
+                                        <li><a href="#">Máy tính để bàn chơi game</a></li>
+                                        <li><a href="#">Máy tính tự ráp</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Đồng hồ thông minh</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Đồng hồ thông minh</a></li>
+                                        <li><a href="#">Đồng hồ thông minh trẻ em</a></li>
+                                        <li><a href="#">Đồng hồ thông minh thiết kế</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Máy chơi game</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Máy chơi game</a></li>
+                                        <li><a href="#">Trò chơi máy console</a></li>
+                                        <li><a href="#">Tai nghe chơi game</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Phụ Kiện Điện Tử</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#">Phụ kiện di động</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Pin sạc dự phòng</a></li>
+                                        <li><a href="#">Cáp & Dock sạc</a></li>
+                                        <li><a href="#">Bộ sạc có dây</a></li>
+                                        <li><a href="#">Bộ sạc không dây</a></li>
+                                        <li><a href="#">Ốp lưng và bao da điện thoại</a></li>
+                                        <li><a href="#">Ốp lưng và bao da máy tính bảng</a></li>
+                                        <li><a href="#">Miếng dán màn hình điện thoại</a></li>
+                                        <li><a href="#">Gậy chụp ảnh</a></li>
+                                        <li><a href="#">Sạc trên xe hơi</a></li>
+                                        <li><a href="#">Sim & Thẻ cào</a></li>
+                                        <li><a href="#">Dock sạc & Giá đỡ</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Thiết bị thông minh</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Đồng hồ thông minh & Phụ kiện</a></li>
+                                        <li><a href="#">Thiết bị theo dõi vận động</a></li>
+                                        <li><a href="#">Loa thông minh</a></li>
+                                        <li><a href="#">Công tắt thông minh</a></li>
+                                        <li><a href="#">Mắt kính thông minh</a></li>
+                                        <li><a href="#">Nhẫn thông minh</a></li>
+                                        <li><a href="#">Thiết bị streaming</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Thiết bị lưu trữ</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Ổ cứng gắn trong</a></li>
+                                        <li><a href="#">Ổ cứng gắn ngoài</a></li>
+                                        <li><a href="#">Thẻ nhớ</a></li>
+                                        <li><a href="#">USB</a></li>
+                                        <li><a href="#">Ổ cứng SSD gắn trong</a></li>
+                                        <li><a href="#">Ổ cứng SSD gắn ngoài</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Phụ kiện máy tính</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Phụ kiện Macbook</a></li>
+                                        <li><a href="#">Bàn phím</a></li>
+                                        <li><a href="#">Chuột</a></li>
+                                        <li><a href="#">Đế tảng nhiệt</a></li>
+                                        <li><a href="#">Ổ đĩa rời</a></li>
+                                        <li><a href="#">Pin Laptop</a></li>
+                                        <li><a href="#">Miếng lót chuột</a></li>
+                                        <li><a href="#">Decal dán</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Phụ kiện máy chơi game</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Tay cầm chơi game</a></li>
+                                        <li><a href="#">Kệ treo & Chân đế</a></li>
+                                        <li><a href="#">Cáp & Bộ sạc</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Tivi & Thiết Bị Điện Gia Dụng</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#">Tivi & Videos</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Tivi thông minh</a></li>
+                                        <li><a href="#">Tivi kỹ thuật số</a></li>
+                                        <li><a href="#">Tivi Analog</a></li>
+                                        <li><a href="#">Video</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Điện gia dụng</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Máy lạnh</a></li>
+                                        <li><a href="#">Tủ lạnh</a></li>
+                                        <li><a href="#">Tủ đông</a></li>
+                                        <li><a href="#">Bếp điện</a></li>
+                                        <li><a href="#">Máy giặt</a></li>
+                                        <li><a href="#">Máy sấy</a></li>
+                                    </ul>
+                                </li>
+                                <li><a tabindex="-1" href="#">Phụ kiện Tivi</a></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">Sức khỏe & Làm đẹp</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-submenu">
+                                    <a href="#">Chăm sóc gia</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Sữa rửa mặt</a></li>
+                                        <li><a href="#">Mặt nạ lột & Tẩy tế bào</a></li>
+                                        <li><a href="#">Nước hoa hồng</a></li>
+                                        <li><a href="#">Dưỡng môi</a></li>
+                                        <li><a href="#">Điều trị mụn</a></li>
+                                        <li><a href="#">kem chống nắng</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Trang điểm</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Mắt</a></li>
+                                        <li><a href="#">Mascara</a></li>
+                                        <li><a href="#">Mặt</a></li>
+                                        <li><a href="#">Môi</a></li>
+                                        <li><a href="#">Phụ kiện trang điểm</a></li>
+                                        <li><a href="#">Tẩy trang</a></li>
+                                        <li><a href="#">Sơn móng tay</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Chăm sóc cơ thể</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Sữa tắm</a></li>
+                                        <li><a href="#">Sữa dưỡng thể</a></li>
+                                        <li><a href="#">Phụ kiện tắm</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Chăm sóc tóc</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Dầu gội</a></li>
+                                        <li><a href="#">Dầu xả</a></li>
+                                        <li><a href="#">Thuốc nhuộm tóc</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Nước hoa</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Nam</a></li>
+                                        <li><a href="#">Nữ</a></li>
+                                        <li><a href="#">Unisex</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#">Thiết bị y tế</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Dụng cụ sơ cứu</a></li>
+                                        <li><a href="#">Dụng cụ chăm sóc sức khỏe</a></li>
+                                        <li><a href="#">Chăm sóc chấn thương</a></li>
+                                        <li><a href="#">Máy đo bước</a></li>
+                                        <li><a href="#">Ống nghe</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
+        <div class="top_nav_left">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                                aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse menu--shylock" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav menu__list">
+                            <li class="">
+                                <a class="nav-stylehead" href="about.html"><i class="fa fa-shopping-basket"></i> GSMall</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-stylehead" href="about.html"><i class="fa fa-percent"></i> Mã Giảm Giá</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-stylehead" href="about.html"><i class="fa fa-mobile"></i> Nạp Thẻ & eVoucher</a>
+                            </li>
+                            <li class="">
+                                <a class="nav-stylehead" href="about.html"><i class="fa fa-globe"></i> GSGlobal</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewBag.Title = "Kênh Người Bán";
+    Layout = "~/Views/Shared/_LayoutNguoiBan.cshtml";
+}
+<style>
+    .circle {
+      margin: 36px;
+      display: inline-block;
+      padding: 16px;
+      text-align: center;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 2px solid #1d2087;
+    }
+
+    .circle::before,
+    .circle::after {
+      position: absolute;
+      z-index: -1;
+      display: block;
+      content: '';
+    }
+    .circle,
+    .circle::before,
+    .circle::after {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-transition: all .5s;
+      transition: all .5s;
+    }
+
+    .circle {
+      position: relative;
+      z-index: 2;
+      background-color: #fff;
+      border: 2px solid #000000;
+      color: #5c5eae;
+      line-height: 50px;
+      overflow: hidden;
+    }
+
+    .circle:hover {
+      color: #fff;
+    }
+    .circle::after {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      -webkit-transform: scale(.5);
+      transform: scale(.5);
+    }
+    .circle:hover::after {
+      background: #00ffff;
+      border-radius: 50%;
+      -webkit-transform: scale(.9);
+      transform: scale(.9);
+    }
+
+    .circle1 {
+      opacity: 0.4;
+    }
+
+    .circle2 {
+      opacity: 0.6;
+    }
+
+    .circle3 {
+      opacity: 0.8;
+    }
+
+    .circle a {
+        text-decoration: none;
+        color: #5c5eae;
+    }
+
+    .circle h2 {
+      font-size: 60px;
+    }
+
+    .circle h2 small {
+      color: #1d2087;
+    }
+
+    .circle p {
+      font-size: 24px;
+      line-height: 26px;
+      color: black;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <section class="section_0">
+            <div class="col-sm-3">
+                <div class="circle">
+                    <a href="#section_4"><h2><i class="fa fa-gift"></i><p>Sản Phẩm</p></h2></a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="circle">
+                    <a href="#section_4"><h2><i class="fa fa-th-large"></i><p>Danh mục của Shop</p></h2></a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="circle">
+                    <a href="#section_4"><h2><i class="fa fa-archive"></i><p>Đơn Bán</p></h2></a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="circle">
+                    <a href="#section_4"><h2><i class="fa fa-bullhorn"></i><p>Kênh Marketing</p></h2></a>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="row">
+        <section class="section_0">
+            <div class="col-sm-3">
+                <div class="circle">
+                    <a href="#section_4"><h2><i class="fa fa-dollar"></i><p>Doanh Thu</p></h2></a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="circle">
+                    <a href="#section_4"><h2><i class="fa fa-credit-card"></i><p>Ví GS Shop</p></h2></a>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="circle">
+                    <a href="#section_4"><h2><i class="fa fa-cog"></i><p>Thiết lập Shop</p></h2></a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>  

@@ -1,0 +1,56 @@
+﻿@using WebsiteGS_Shop.Models
+@model List<NguoiBan>
+@{ 
+    NguoiBan sesnb = (NguoiBan)Session["nb"];
+}
+<div class="header-bot" style="background: #1accfd;">
+    <div class="header-bot_inner_wthreeinfo_header_mid">
+        <!-- header-bot-->
+        <div class="col-md-5 logo_agile">
+            <h1>
+                <a href="/Home/Index">
+                    <span>G</span><span>S</span> Shop - <span style="font-size: 22px; color: black; font-family: 'Segoe UI'">Kênh Người Bán</span>
+                    <img src="~/Content/Layout/images/logo2.png" alt=" ">
+                </a>
+            </h1>
+        </div>
+        <!-- header-bot -->
+        <div class="col-md-7 header">
+            <!-- header lists -->
+            @if (sesnb != null)
+            {
+                <ul class="text-right">
+                    <li class="dropdown" style="margin-top: 3%; font-size: 16px">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b class="fa fa-user"></b> Chào, @sesnb.TenNB</a>
+                        <ul class="dropdown-menu">
+                            <li style="width: 100%; text-align: unset"><a href="/user/preferences"><i class="fa fa-smile-o"></i> Quản lý tài khoản</a></li>
+                            <li style="width: 100%; text-align: unset"><a href="/help/support"><i class="fa fa-archive"></i> Đơn hàng của tôi</a></li>
+                            <li style="width: 100%; text-align: unset"><a href="/auth/logout"><i class="fa fa-heart"></i> Danh sách yêu thích</a></li>
+                            <li style="width: 100%; text-align: unset"><a href="/auth/logout"><i class="fa fa-bell"></i> Đơn hàng đã theo dõi</a></li>
+                            <li style="width: 100%; text-align: unset"><a href="/auth/logout"><i class="fa fa-star"></i> Nhận xét của tôi</a></li>
+                            <li style="width: 100%; text-align: unset"><a href="/auth/logout"><i class="fa fa-times-circle"></i> Quản lý đơn hàng và đổi trả</a></li>
+                            <li style="width: 100%; text-align: unset"><a href="/DangNhap/DangXuat"><i class="fa fa-sign-out"></i> Đăng xuất</a></li>
+                        </ul>
+                    </li>
+                    <li style="border-right: none;">
+                        <a href="/DangNhap/DangXuat">
+                            <span class="fa fa-sign-out" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            }
+            else
+            {
+
+            }
+            <!-- //header lists -->
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- signin Model -->
+<!-- //signin Model -->
+<!-- signup Model -->
+
+

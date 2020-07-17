@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .hr-sect {
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: black;
+	margin: 8px 0px;
+    }
+    .hr-sect::before,
+    .hr-sect::after {
+	    content: "";
+	    flex-grow: 1;
+	    background: rgba(0, 0, 0, 0.35);
+	    height: 1px;
+	    font-size: 0px;
+	    line-height: 0px;
+	    margin: 0px 8px;
+    }
+</style>
+<div class="container">
+    <div class="modal-body modal-body-sub_agile">
+        <div class="main-mailposi">
+            <span class="fa fa-envelope-o" aria-hidden="true"></span>
+        </div>
+        <div class="modal_body_left modal_body_left1">
+            <center>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Chào mừng đến với GS Shop. Đăng nhập ngay!</h3>
+                    </div>
+                    <div class="col-md-6">
+                        Thành viên mới?<a href="#"> Đăng ký</a> tại đây.
+                    </div>
+                </div>
+            </center>
+            <br />
+            <form action="#" method="post">
+                <div class="col-md-12" style="background-color: #f1f1f1">
+                    <br />
+                    <div class="col-md-6">
+                        <div class="styled-input agile-styled-input-top">
+                            <input type="text" placeholder="Email" name="Name">
+                            <b style="font-size: 12px; color: red;">@ViewBag.TaiKhoan</b>
+                        </div>
+                        <div class="styled-input">
+                            <input type="password" placeholder="Mật khẩu" name="password">
+                            <b style="font-size: 12px; color: red;">@ViewBag.MatKhau</b>
+                            <br />
+                        </div>
+                        <center>
+                            <p style="float: right">
+                                <a href="#" style="font-size: 13px">
+                                    Quên Mật Khẩu?
+                                </a>
+                            </p>
+                        </center>
+                        <br />
+                        <center><input type="submit" onclick="xuly()" value="ĐĂNG NHẬP"></center>
+                        @Html.Raw(ViewBag.TKMK)
+                        <br />
+                    </div>
+                    <br />
+                    <div class="col-md-6">
+                        <div class="hr-sect">Hoặc</div>
+                        <center>
+                            <button class="btn btn-primary"><i class="fa fa-facebook"></i>&nbsp;&nbsp;Đăng nhập bằng tài khoản Facebook</button>
+                            <br />
+                            <br />
+                            <button class="btn btn-danger"><i class="fa fa-google-plus"></i>&nbsp;&nbsp;Đăng nhập bằng tài khoản Google</button>
+                            <br />
+                            <br />
+                        </center>
+                    </div>
+                </div>                
+            </form>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>   
+
